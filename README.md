@@ -37,7 +37,7 @@ Built with empathy, security, and transparency at its core.
 
 ## 🚀 Live Demo / Pages
 
-- **Home** → [index.html](index.html)
+- **Home** → [home.html](home.html)
 - **About Us** → [about.html](about.html)
 - **For Patients** → [patients.html](patients.html)
 - **For Providers** → [providers.html](providers.html)

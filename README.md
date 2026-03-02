@@ -57,3 +57,4 @@ Built with empathy, security, and transparency at its core.
 - **No build tools** — pure static HTML/CSS/JS (easy to host on GitHub Pages, Netlify, Vercel)
 
 ## 📂 Project Structure
+# Illuminate

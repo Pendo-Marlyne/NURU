@@ -1,0 +1,377 @@
+ <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – Nuru MedFinTech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+   
+    body { font-family: 'Inter', sans-serif; }
+   
+    .hero-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+      background-size: 300% 300%;
+      animation: gradientShift 22s ease infinite;
+    }
+   
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+   
+    .glass {
+      background: rgba(30, 58, 138, 0.28);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(251, 191, 36, 0.20);
+      border-radius: 1.75rem;
+    }
+   
+    .nav-glow {
+      position: relative;
+      transition: all 0.35s ease;
+    }
+    .nav-glow:hover {
+      color: #fbbf24 !important;
+      transform: translateY(-2px) scale(1.05);
+    }
+    .nav-glow:hover::after {
+      content: '';
+      position: absolute;
+      inset: -6px -12px;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 9999px;
+      box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.55), 0 0 24px 6px rgba(59, 130, 246, 0.35);
+      opacity: 1;
+    }
+   
+    .fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+   
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(251, 191, 36, 0.15);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-slate-950/92 backdrop-blur-md border-b border-amber-400/20">
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <svg width="48" height="58" viewBox="0 0 52 62" fill="none" class="drop-shadow-[0_0_12px_#fbbf24]">
+          <rect x="24" y="4" width="4" height="54" rx="2" fill="#d97706"/>
+          <path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <circle cx="26" cy="12" r="4" fill="#b45309"/>
+          <circle cx="30" cy="48" r="4" fill="#b45309"/>
+        </svg>
+        <span class="text-3xl font-black tracking-tight text-amber-400">NURU</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="home.html" class="nav-glow text-white hover:text-amber-400">Home</a>
+        <a href="about.html" class="nav-glow text-amber-400">About Us</a>
+        <a href="patients.html" class="nav-glow text-white hover:text-amber-400">For Patients</a>
+        <a href="providers.html" class="nav-glow text-white hover:text-amber-400">For Providers</a>
+        <a href="resources.html" class="nav-glow text-white hover:text-amber-400">Resources</a>
+        <a href="insights.html" class="nav-glow text-white hover:text-amber-400">Insights</a>
+        <a href="security.html" class="nav-glow text-white hover:text-amber-400">Security</a>
+        <a href="contact.html" class="nav-glow text-white hover:text-amber-400">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-3xl text-white">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-amber-400/20 py-6">
+      <div class="flex flex-col items-center gap-6 text-lg">
+        <a href="home.html" class="nav-glow">Home</a>
+        <a href="about.html" class="nav-glow">About Us</a>
+        <a href="patients.html" class="nav-glow">For Patients</a>
+        <a href="providers.html" class="nav-glow">For Providers</a>
+        <a href="resources.html" class="nav-glow">Resources</a>
+        <a href="insights.html" class="nav-glow">Insights</a>
+        <a href="security.html" class="nav-glow">Security</a>
+        <a href="contact.html" class="nav-glow">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-bg py-24 md:py-32 text-center">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="text-5xl text-amber-400 md:text-7xl font-black leading-tight mb-6 fade-in">
+        Your Journey Matters<br/>
+        <span class="text-amber-400">We’re Here With You</span>
+      </h1>
+      <p class="text-2xl md:text-3xl font-bold text-amber-200 mb-8 fade-in">
+        From first question to full recovery — Nuru lights the way.
+      </p>
+      <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-200 fade-in mb-10">
+        No more waiting in uncertainty. No more hidden costs. No more feeling alone.
+      </p>
+      <a href="#start" class="inline-block px-10 py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xl rounded-3xl hover:scale-105 transition shadow-xl fade-in">
+        Check Your Eligibility Now
+      </a>
+    </div>
+  </section>
+
+  <!-- TOPIC IMAGE GRID (pictures unchanged) -->
+  <section class="py-16 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-amber-400 fade-in">
+        Explore Your Care Topics
+      </h2>
+     
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-5">
+        <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+          <img src="kidney.jpg" alt="Kidney Transplant" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h3 class="text-base font-semibold text-white">Kidney Transplant</h3>
+          </div>
+        </a>
+        <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+          <img src="cancercare.jpg" alt="Oncology" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h3 class="text-base font-semibold text-white">Cancer Care</h3>
+          </div>
+        </a>
+        <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+          <img src="highriskbirth.jpg" alt="High-Risk Pregnancy" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h3 class="text-base font-semibold text-white">High-Risk Birth</h3>
+          </div>
+        </a>
+        <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+          <img src="vision.jpg" alt="Eye Surgery" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h3 class="text-base font-semibold text-white">Vision Surgery</h3>
+          </div>
+        </a>
+        <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+          <img src="fertility.jpg" alt="Fertility" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h3 class="text-base font-semibold text-white">Fertility Care</h3>
+          </div>
+        </a>
+        <a href="#" class="group relative overflow-hidden rounded-xl shadow-lg fade-in">
+          <img src="audiology.jpg" alt="Audiology" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <h3 class="text-base font-semibold text-white">Hearing Care</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT NURU GIVES YOU (BENEFITS) -->
+  <section class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 text-amber-400 fade-in">
+        What Changes for You
+      </h2>
+     
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass p-8 rounded-3xl card-hover fade-in">
+          <i class="fa-solid fa-stopwatch text-5xl text-emerald-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4 text-center">Speed You Can Feel</h3>
+          <p class="text-slate-300 text-center">
+            Insurance checked in seconds. Donor matches found faster. Funds reach the hospital the same day.
+          </p>
+        </div>
+        <div class="glass p-8 rounded-3xl card-hover fade-in">
+          <i class="fa-solid fa-eye text-5xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4 text-center">Total Transparency</h3>
+          <p class="text-slate-300 text-center">
+            See every shilling — where it comes from, where it goes, and when it arrives. No surprises.
+          </p>
+        </div>
+        <div class="glass p-8 rounded-3xl card-hover fade-in">
+          <i class="fa-solid fa-book-open-reader text-5xl text-sky-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4 text-center">Knowledge That Empowers</h3>
+          <p class="text-slate-300 text-center">
+            Clear guides, videos, and trackers for transplants, oncology, fertility, high-risk birth, and more — in language you understand.
+          </p>
+        </div>
+        <div class="glass p-8 rounded-3xl card-hover fade-in">
+          <i class="fa-solid fa-heart text-5xl text-rose-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4 text-center">You’re Never Alone</h3>
+          <p class="text-slate-300 text-center">
+            Connect with others on the same journey. Access support groups and a dedicated care navigator.
+          </p>
+        </div>
+        <div class="glass p-8 rounded-3xl card-hover fade-in">
+          <i class="fa-solid fa-wallet text-5xl text-violet-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4 text-center">Financial Peace of Mind</h3>
+          <p class="text-slate-300 text-center">
+            Real-time view of funds raised, remaining gap, and next steps. Repayment plans and emergency grants.
+          </p>
+        </div>
+        <div class="glass p-8 rounded-3xl card-hover fade-in">
+          <i class="fa-solid fa-shield-halved text-5xl text-emerald-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4 text-center">Your Data Is Safe</h3>
+          <p class="text-slate-300 text-center">
+            Bank-level encryption. Kenya DPA & HIPAA-aligned. You control who sees what.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK ELIGIBILITY CHECK -->
+  <section id="start" class="py-20 bg-slate-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-10 text-amber-400 fade-in">
+        Ready to Take the First Step?
+      </h2>
+      <p class="text-xl md:text-2xl text-slate-300 mb-12 fade-in">
+        Answer a few quick questions — get clarity on your coverage, estimated costs, and possible funding paths in minutes.
+      </p>
+      <div class="glass p-10 md:p-16 max-w-3xl mx-auto fade-in">
+        <h3 class="text-3xl font-bold mb-8">Quick Eligibility Check</h3>
+        <form class="space-y-6 text-left">
+          <div>
+            <label class="block text-sm font-medium mb-2">Procedure / Treatment Needed</label>
+            <select class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-5 py-4 focus:outline-none focus:border-amber-400">
+              <option>Kidney Transplant</option>
+              <option>Heart Transplant</option>
+              <option>Cancer Treatment (Oncology)</option>
+              <option>Fertility Treatment</option>
+              <option>High-Risk Pregnancy Care</option>
+              <option>Cataract / LASIK Surgery</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-2">Do you have NHIF or private insurance?</label>
+            <div class="flex gap-6">
+              <label class="flex items-center gap-2">
+                <input type="radio" name="insurance" class="accent-amber-400">
+                <span>Yes</span>
+              </label>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="insurance" class="accent-amber-400">
+                <span>No</span>
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="w-full py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xl rounded-3xl hover:scale-105 transition">
+            See My Options →
+          </button>
+        </form>
+        <p class="text-sm text-slate-400 mt-6 text-center">
+          This is a quick estimate only. A Nuru care navigator will contact you for full support.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMOTIONAL CLOSER -->
+  <section class="py-20 bg-gradient-to-br from-amber-600 via-amber-700 to-yellow-700 text-slate-950">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-black mb-8">
+        You deserve care.<br/>Not barriers.
+      </h2>
+      <p class="text-xl md:text-2xl mb-12">
+        Thousands of families have already found hope through Nuru.<br/>
+        Let us help write the next chapter of your story.
+      </p>
+      <a href="#" class="inline-block px-12 py-6 bg-white font-bold text-xl rounded-3xl hover:scale-105 transition shadow-2xl">
+        Start My Journey
+      </a>
+    </div>
+  </section>
+
+  <!-- COMPANY FOOTER -->
+  <footer class="bg-slate-950 py-20 border-t border-amber-400/20">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-slate-400">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <svg width="40" height="48" viewBox="0 0 52 62" fill="none" class="drop-shadow-[0_0_8px_#fbbf24]">
+            <rect x="24" y="4" width="4" height="54" rx="2" fill="#d97706"/>
+            <path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="26" cy="12" r="4" fill="#b45309"/>
+            <circle cx="30" cy="48" r="4" fill="#b45309"/>
+          </svg>
+          <span class="text-2xl font-black text-amber-400">NURU</span>
+        </div>
+        <p>Illuminating connected care across East Africa.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="home.html" class="hover:text-amber-300">Home</a></li>
+          <li><a href="about.html" class="hover:text-amber-300">About Us</a></li>
+          <li><a href="solutions.html" class="hover:text-amber-300">Solutions</a></li>
+          <li><a href="patients.html" class="hover:text-amber-300">For Patients</a></li>
+          <li><a href="providers.html" class="hover:text-amber-300">For Providers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="resources.html" class="hover:text-amber-300">Guides & Tools</a></li>
+          <li><a href="insights.html" class="hover:text-amber-300">Insights</a></li>
+          <li><a href="security.html" class="hover:text-amber-300">Security</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Connect</h3>
+        <div class="flex justify-center gap-6 text-2xl mb-6">
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="text-sm mb-4">Subscribe for updates & insights</p>
+        <form class="flex flex-col gap-3">
+          <input type="email" placeholder="your@email.com" class="bg-slate-800 border border-amber-400/30 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400">
+          <button type="submit" class="py-3 bg-amber-500 text-slate-950 font-bold rounded-xl hover:bg-amber-400 transition">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    <p class="text-center text-slate-500 mt-12 text-sm">© 2026 Nuru MedFinTech. All rights reserved. Nairobi, Kenya.</p>
+  </footer>
+
+  <script>
+    // Fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Mobile menu toggle – fully functional
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        menuBtn.innerHTML = mobileMenu.classList.contains('hidden')
+          ? '<i class="fa-solid fa-bars"></i>'
+          : '<i class="fa-solid fa-xmark"></i>';
+      });
+    }
+  </script>
+</body>
+</html> 

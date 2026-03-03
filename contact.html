@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Partner with Nuru MedFinTech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+    
+    body { font-family: 'Inter', sans-serif; }
+    
+    .hero-bg {
+      background: linear-gradient(135deg, #1e3d91 0%, #1e3d91 50%, #0a06be 100%);
+      background-size: 300% 300%;
+      animation: gradientShift 22s ease infinite;
+    }
+    
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .glass {
+      background: rgba(30, 64, 138, 0.28);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(199, 146, 12, 0.2);
+      border-radius: 1.75rem;
+    }
+    
+    .nav-glow {
+      position: relative;
+      transition: all 0.35s ease;
+    }
+    .nav-glow:hover {
+      color: #fbbf24 !important;
+      transform: translateY(-2px) scale(1.05);
+    }
+    .nav-glow:hover::after {
+      content: '';
+      position: absolute;
+      inset: -6px -12px;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 9999px;
+      box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.55), 0 0 24px 6px rgba(59, 130, 246, 0.35);
+      opacity: 1;
+    }
+    
+    .fade-in { opacity: 0; transform: translateY(40px); transition: all 1s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body class="bg-slate-950 text-white min-h-screen">
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-slate-950/92 backdrop-blur-md border-b border-amber-400/20">
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <svg width="48" height="58" viewBox="0 0 52 62" fill="none" class="drop-shadow-[0_0_12px_#fbbf24]">
+          <rect x="24" y="4" width="4" height="54" rx="2" fill="#d97706"/>
+          <path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <circle cx="26" cy="12" r="4" fill="#b45309"/>
+          <circle cx="30" cy="48" r="4" fill="#b45309"/>
+        </svg>
+        <span class="text-3xl font-black tracking-tight text-amber-400">NURU</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="home.html" class="nav-glow text-white hover:text-amber-400">Home</a>
+        <a href="about.html" class="nav-glow text-white hover:text-amber-400">About Us</a>
+        <a href="solutions.html" class="nav-glow text-white hover:text-amber-400">Solutions</a>
+        <a href="patients.html" class="nav-glow text-white hover:text-amber-400">For Patients</a>
+        <a href="providers.html" class="nav-glow text-white hover:text-amber-400">For Providers</a>
+        <a href="resources.html" class="nav-glow text-white hover:text-amber-400">Resources</a>
+        <a href="insights.html" class="nav-glow text-white hover:text-amber-400">Insights</a>
+        <a href="security.html" class="nav-glow text-white hover:text-amber-400">Security</a>
+        <a href="contact.html" class="nav-glow text-amber-400">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-3xl">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-amber-400/20 py-6">
+      <div class="flex flex-col gap-6 text-center text-lg font-medium px-6">
+        <a href="home.html" class="nav-glow">Home</a>
+        <a href="about.html" class="nav-glow">About Us</a>
+        <a href="solutions.html" class="nav-glow">Solutions</a>
+        <a href="patients.html" class="nav-glow">For Patients</a>
+        <a href="providers.html" class="nav-glow">For Providers</a>
+        <a href="resources.html" class="nav-glow">Resources</a>
+        <a href="insights.html" class="nav-glow">Insights</a>
+        <a href="security.html" class="nav-glow">Security</a>
+        <a href="contact.html" class="nav-glow">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO – Warm Invitation -->
+  <section class="hero-bg py-24 md:py-32 text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 fade-in text-amber-400">
+        Let's Build the Future<br/>
+        <span class="text-amber-400">of Healthcare Together</span>
+      </h1>
+      <p class="text-2xl md:text-3xl font-bold text-300 mb-8 fade-in">
+        Join an ecosystem of hospitals, banks, donors, insurers, tech partners — and you.
+      </p>
+      <p class="max-w-3xl mx-auto text-lg text-slate-300 fade-in mb-12">
+        Whether you're seeking care, offering services, donating, investing, or partnering — we're ready to connect.
+      </p>
+      <a href="#contact-options" class="inline-block px-10 py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xl rounded-3xl hover:scale-105 transition shadow-xl fade-in">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT OPTIONS – Tailored for Different Partners -->
+  <section id="contact-options" class="py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 text-amber-400 fade-in">
+        Choose How You'd Like to Connect
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Patients / Families -->
+        <div class="glass p-8 rounded-3xl text-center card-hover fade-in">
+          <i class="fa-solid fa-heart text-5xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">Patients & Families</h3>
+          <p class="text-slate-300 mb-6">Questions about funding, eligibility, or your dashboard?</p>
+          <div class="space-y-3">
+            <a href="mailto:patients@nuruhealth.co.ke" class="block text-amber-400 hover:underline">patients@nuruhealth.co.ke</a>
+            <a href="tel:+254700123456" class="block text-amber-400 hover:underline">+254 700 123 456 (Hotline)</a>
+          </div>
+        </div>
+
+        <!-- Providers / Hospitals -->
+        <div class="glass p-8 rounded-3xl text-center card-hover fade-in">
+          <i class="fa-solid fa-hospital text-5xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">Hospitals & Providers</h3>
+          <p class="text-slate-300 mb-6">Integration, partnership, demo, or billing support</p>
+          <div class="space-y-3">
+            <a href="mailto:providers@nuruhealth.co.ke" class="block text-amber-400 hover:underline">providers@nuruhealth.co.ke</a>
+            <a href="tel:+254711987654" class="block text-amber-400 hover:underline">+254 711 987 654</a>
+          </div>
+        </div>
+
+        <!-- Donors / NGOs / Investors -->
+        <div class="glass p-8 rounded-3xl text-center card-hover fade-in">
+          <i class="fa-solid fa-hand-holding-heart text-5xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">Donors, NGOs & Investors</h3>
+          <p class="text-slate-300 mb-6">Partnerships, donations, impact reporting, investment</p>
+          <div class="space-y-3">
+            <a href="mailto:partners@nuruhealth.co.ke" class="block text-amber-400 hover:underline">partners@nuruhealth.co.ke</a>
+            <a href="tel:+254722555666" class="block text-amber-400 hover:underline">+254 722 555 666</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-lg text-slate-300">General / Media Inquiries: <a href="mailto:info@nuruhealth.co.ke" class="text-amber-400 hover:underline">info@nuruhealth.co.ke</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION & LOGIN -->
+  <section class="py-20 bg-slate-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 text-amber-400 fade-in">
+        Join or Access Your Nuru Account
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Registration -->
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-8 text-center">Register</h3>
+          <form class="space-y-6">
+            <input type="text" placeholder="Full Name" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+            <input type="email" placeholder="Email Address" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+            <input type="tel" placeholder="Phone Number (+254...)" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+            <input type="password" placeholder="Create Password" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+            <button type="submit" class="w-full py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xl rounded-3xl hover:scale-105 transition">
+              Create Account
+            </button>
+          </form>
+        </div>
+
+        <!-- Login -->
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-8 text-center">Login</h3>
+          <form class="space-y-6">
+            <input type="email" placeholder="Email or Phone" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+            <input type="password" placeholder="Password" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+            <button type="submit" class="w-full py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xl rounded-3xl hover:scale-105 transition">
+              Login to Dashboard
+            </button>
+            <div class="text-center text-sm text-slate-400 mt-4">
+              <a href="#" class="text-amber-400 hover:underline">Forgot Password?</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENERAL CONTACT FORM -->
+  <section class="py-20 bg-slate-950">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-amber-400 fade-in">
+        Send Us a Message
+      </h2>
+      
+      <div class="glass p-10 rounded-3xl fade-in">
+        <form class="space-y-6">
+          <div class="grid md:grid-cols-2 gap-6">
+            <input type="text" placeholder="Your Name" class="bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+            <input type="email" placeholder="Email Address" class="bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+          </div>
+          <input type="text" placeholder="Subject / Topic" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+          <textarea placeholder="Your Message" rows="6" class="w-full bg-slate-800 border border-amber-400/30 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400"></textarea>
+          <button type="submit" class="w-full py-5 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xl rounded-3xl hover:scale-105 transition">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFICE & HOURS -->
+  <section class="py-20 bg-slate-900">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-amber-400 fade-in">
+        Our Headquarters & Operations
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Office Location</h3>
+          <p class="text-slate-300 text-lg mb-4">Nuru MedFinTech Limited</p>
+          <p class="text-slate-300 mb-2">Delta Towers, 9th Floor</p>
+          <p class="text-slate-300 mb-2">Westlands Road, Westlands</p>
+          <p class="text-slate-300 mb-6">Nairobi, Kenya</p>
+          <a href="https://maps.google.com/?q=Delta+Towers+Westlands+Nairobi" target="_blank" class="text-amber-400 hover:underline flex items-center gap-2 justify-center">
+            <i class="fa-solid fa-map-marker-alt"></i> Get Directions
+          </a>
+        </div>
+
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Business Hours</h3>
+          <ul class="text-slate-300 space-y-3 text-lg">
+            <li><strong>Monday – Friday:</strong> 8:00 AM – 5:00 PM EAT</li>
+            <li><strong>Saturday:</strong> 9:00 AM – 1:00 PM EAT</li>
+            <li><strong>Sunday & Public Holidays:</strong> Closed</li>
+            <li><strong>24/7 Emergency Support:</strong> +254 700 123 456</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="py-20 bg-gradient-to-br from-amber-600 via-amber-700 to-yellow-700 text-slate-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-5xl font-black mb-8">Ready to Join the Movement?</h2>
+      <p class="text-2xl mb-12">
+        Whether you're a patient needing support, a hospital ready to integrate, a donor wanting impact, or an investor seeing opportunity — let's talk.
+      </p>
+      <a href="#contact-options" class="inline-block px-12 py-6 bg-white font-bold text-xl rounded-3xl hover:scale-105 transition shadow-xl">
+        Start the Conversation
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 py-20 border-t border-amber-400/20">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-slate-400">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <svg width="40" height="48" viewBox="0 0 52 62" fill="none" class="drop-shadow-[0_0_8px_#fbbf24]">
+            <rect x="24" y="4" width="4" height="54" rx="2" fill="#d97706"/>
+            <path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="26" cy="12" r="4" fill="#b45309"/>
+            <circle cx="30" cy="48" r="4" fill="#b45309"/>
+          </svg>
+          <span class="text-2xl font-black text-amber-400">NURU</span>
+        </div>
+        <p>Illuminating connected care across East Africa.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html" class="hover:text-amber-300">About Us</a></li>
+          <li><a href="solutions.html" class="hover:text-amber-300">Solutions</a></li>
+          <li><a href="patients.html" class="hover:text-amber-300">For Patients</a></li>
+          <li><a href="providers.html" class="hover:text-amber-300">For Providers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="resources.html" class="hover:text-amber-300">Guides & Tools</a></li>
+          <li><a href="insights.html" class="hover:text-amber-300">Insights</a></li>
+          <li><a href="security.html" class="hover:text-amber-300">Security</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Connect</h3>
+        <div class="flex justify-center gap-6 text-2xl mb-6">
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="text-sm mb-4">Subscribe for updates & insights</p>
+        <form class="flex flex-col gap-3">
+          <input type="email" placeholder="your@email.com" class="bg-slate-800 border border-amber-400/30 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400">
+          <button type="submit" class="py-3 bg-amber-500 text-slate-950 font-bold rounded-xl hover:bg-amber-400 transition">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    <p class="text-center text-slate-500 mt-12 text-sm">© 2026 Nuru MedFinTech. All rights reserved. Nairobi, Kenya.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.innerHTML = mobileMenu.classList.contains('hidden') 
+        ? '<i class="fa-solid fa-bars"></i>' 
+        : '<i class="fa-solid fa-xmark"></i>';
+    });
+
+    // Fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights – Nuru MedFinTech</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+    
+    body { font-family: 'Inter', sans-serif; }
+    
+    .hero-bg {
+      background: linear-gradient(135deg, #0a0f1c 0%, #0f1e4a 50%, #0a0f1c 100%);
+      background-size: 300% 300%;
+      animation: deepPulse 18s ease infinite;
+    }
+    
+    @keyframes deepPulse {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .glass {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(251, 191, 36, 0.22);
+      border-radius: 2rem;
+    }
+    
+    .nav-glow {
+      position: relative;
+      transition: all 0.35s ease;
+    }
+    .nav-glow:hover {
+      color: #fbbf24 !important;
+      transform: translateY(-2px) scale(1.05);
+    }
+    .nav-glow:hover::after {
+      content: '';
+      position: absolute;
+      inset: -6px -12px;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 9999px;
+      box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.55), 0 0 24px 6px rgba(59, 130, 246, 0.35);
+      opacity: 1;
+    }
+    
+    .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.9s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    
+    .large-card { min-height: 28rem; }
+  </style>
+</head>
+<body class="bg-slate-950 text-gray-100 min-h-screen">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-amber-400/20">
+    <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <svg width="48" height="58" viewBox="0 0 52 62" fill="none" class="drop-shadow-[0_0_12px_#fbbf24]">
+          <rect x="24" y="4" width="4" height="54" rx="2" fill="#d97706"/>
+          <path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <circle cx="26" cy="12" r="4" fill="#b45309"/>
+          <circle cx="30" cy="48" r="4" fill="#b45309"/>
+        </svg>
+        <span class="text-3xl font-black tracking-tight text-amber-400">NURU</span>
+      </div>
+
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="nav-glow text-white hover:text-amber-400">Home</a>
+        <a href="about.html" class="nav-glow text-white hover:text-amber-400">About Us</a>
+        <a href="solutions.html" class="nav-glow text-white hover:text-amber-400">Solutions</a>
+        <a href="patients.html" class="nav-glow text-white hover:text-amber-400">For Patients</a>
+        <a href="providers.html" class="nav-glow text-white hover:text-amber-400">For Providers</a>
+        <a href="resources.html" class="nav-glow text-white hover:text-amber-400">Resources</a>
+        <a href="#" class="nav-glow text-amber-400">Insights</a>
+        <a href="security.html" class="nav-glow text-white hover:text-amber-400">Security</a>
+        <a href="contact.html" class="nav-glow text-white hover:text-amber-400">Contact</a>
+      </div>
+
+      <button id="mobile-menu-btn" class="md:hidden text-3xl text-white">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-950 border-t border-amber-400/20 py-6">
+      <div class="flex flex-col items-center gap-6 text-lg">
+        <a href="index.html" class="nav-glow">Home</a>
+        <a href="about.html" class="nav-glow">About Us</a>
+        <a href="solutions.html" class="nav-glow">Solutions</a>
+        <a href="patients.html" class="nav-glow">For Patients</a>
+        <a href="providers.html" class="nav-glow">For Providers</a>
+        <a href="resources.html" class="nav-glow">Resources</a>
+        <a href="#" class="nav-glow">Insights</a>
+        <a href="security.html" class="nav-glow">Security</a>
+        <a href="contact.html" class="nav-glow">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO – Authority & Vision -->
+  <section class="hero-bg py-24 md:py-32 text-center">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="text-5xl md:text-7xl font-black leading-tight mb-6 fade-in">
+        Insights<br/>
+        <span class="text-amber-400">Where Data Meets Vision</span>
+      </h1>
+      <p class="text-2xl md:text-3xl font-medium text-amber-300 mb-8 fade-in">
+        We don't just operate in healthcare finance — we understand it, shape it, and lead it.
+      </p>
+      <p class="max-w-3xl mx-auto text-lg text-slate-300 fade-in">
+        Original research, trend analysis, and data-driven foresight for Africa's healthcare future.
+      </p>
+    </div>
+  </section>
+
+  <!-- PAST HEALTH CRISES – LARGE CARDS -->
+  <section class="py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-center mb-16 text-amber-400 fade-in">
+        Lessons from Past Health Crises
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="glass large-card p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">2020–2022 COVID Funding Collapse</h3>
+          <p class="text-slate-300 mb-6">Rural Kenya saw 42% higher mortality due to delayed oxygen & ICU access — largely from cash-flow gaps in facilities.</p>
+          <p class="text-slate-300 mb-6">Technology + finance innovation (early donor pools + instant disbursements) saved thousands by cutting delays from weeks to hours.</p>
+          <a href="#" class="text-amber-400 hover:underline">Read Full Case Study</a>
+        </div>
+
+        <div class="glass large-card p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">2018–2019 Cancer Care Backlog</h3>
+          <p class="text-slate-300 mb-6">Nairobi hospitals turned away 65% of late-stage cancer patients due to KSh 500,000–2M upfront costs.</p>
+          <p class="text-slate-300 mb-6">Fintech convergence (risk-modelled micro-lending + donor matching) increased treatment completion by 22% in pilot sites.</p>
+          <a href="#" class="text-amber-400 hover:underline">View Research Summary</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIDDEN COSTS OF DELAY – COLUMNS -->
+  <section class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-center mb-16 text-amber-400 fade-in">
+        The Hidden Cost of Delayed Treatment
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Economic Loss</h3>
+          <p class="text-slate-300 mb-4">Delayed care costs East African households KSh 1.2 trillion annually in lost income & productivity (Nation Africa 2025).</p>
+          <p class="text-slate-300">Catastrophic health spending affects 32% of families — rural areas hit hardest.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Mortality & Morbidity</h3>
+          <p class="text-slate-300 mb-4">42% higher mortality in delayed COVID cases; 28% increase in cancer mortality from late presentation (PMC studies).</p>
+          <p class="text-slate-300">Every month of delay in transplant cases reduces survival odds by 12–18%.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Systemic Strain</h3>
+          <p class="text-slate-300 mb-4">Urban hospitals operate at 65–120% capacity due to backlog; rural facilities refer 70% of complex cases due to funding uncertainty.</p>
+          <p class="text-slate-300">Result: higher overall system cost and poorer health outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEALTHCARE ACCESS COLUMNS -->
+  <section class="py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-center mb-16 text-amber-400 fade-in">
+        Healthcare Access Landscape – 2026
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Rural Access</h3>
+          <p class="text-slate-300 mb-4">Only 18% of rural Kenyans live within 5 km of a Level 4+ facility (MoH 2025).</p>
+          <p class="text-slate-300">Transport + funding barriers cause 63% of rural patients to delay or forgo care.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Urban Hospital Capacity</h3>
+          <p class="text-slate-300 mb-4">Nairobi hospitals average 85–120% occupancy for high-acuity beds (oncology, ICU, transplant).</p>
+          <p class="text-slate-300">Funding delays force 35% of complex cases to private facilities or abroad.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-2xl font-bold mb-6">Affordability Trends</h3>
+          <p class="text-slate-300 mb-4">Out-of-pocket spending still 28–35% of total health expenditure (World Bank 2025).</p>
+          <p class="text-slate-300">Catastrophic spending affects 1 in 3 households seeking complex care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDICAL FINANCING & INNOVATION -->
+  <section class="py-20 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-center mb-16 text-amber-400 fade-in">
+        Medical Financing & Health Tech Innovation
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">Risk Assessment Models</h3>
+          <p class="text-slate-300 mb-6">AI-driven scoring now predicts repayment probability with 87% accuracy — enabling micro-lending for treatments at 8–12% interest vs traditional 25–40%.</p>
+          <p class="text-slate-300">Nuru's model combines NHIF data, clinical history, and social determinants.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">Fintech-Medtech Convergence</h3>
+          <p class="text-slate-300 mb-6">API-first hospital integration + secure digital patient records + blockchain-secured donor transactions = 78% reduction in administrative friction.</p>
+          <p class="text-slate-300">Predictive funding models forecast cash needs 30–60 days ahead.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA REPORTS SECTION -->
+  <section class="py-20 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-center mb-16 text-amber-400 fade-in">
+        Annual Data Reports & Trend Analysis
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass p-8 rounded-3xl fade-in text-center">
+          <i class="fa-solid fa-file-lines text-5xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">2025 Healthcare Financing Report</h3>
+          <p class="text-slate-400 mb-6">KSh 1.84B disbursed • 4,912 patients • 67 hospitals</p>
+          <a href="#" class="inline-block px-8 py-4 bg-amber-500 text-slate-950 font-semibold rounded-lg hover:bg-amber-400 transition">
+            Download Full Report
+          </a>
+        </div>
+
+        <div class="glass p-8 rounded-3xl fade-in text-center">
+          <i class="fa-solid fa-chart-pie text-5xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">Patient Payment Trends 2024–2026</h3>
+          <p class="text-slate-400 mb-6">Shift from 65% upfront → 28% upfront with flexible plans</p>
+          <a href="#" class="inline-block px-8 py-4 bg-amber-500 text-slate-950 font-semibold rounded-lg hover:bg-amber-400 transition">
+            View Trend Analysis
+          </a>
+        </div>
+
+        <div class="glass p-8 rounded-3xl fade-in text-center">
+          <i class="fa-solid fa-hand-holding-heart text-5xl text-amber-400 mb-6"></i>
+          <h3 class="text-2xl font-bold mb-4">Donor Impact Assessment</h3>
+          <p class="text-slate-400 mb-6">1,800+ donors • 78% increase in matching success since 2024</p>
+          <a href="#" class="inline-block px-8 py-4 bg-amber-500 text-slate-950 font-semibold rounded-lg hover:bg-amber-400 transition">
+            Read Assessment
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRY COMMENTARY -->
+  <section class="py-20 bg-slate-900">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-center mb-16 text-amber-400 fade-in">
+        Industry Commentary & Expert Perspectives
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">"Cross-Sector Partnerships Are the Future"</h3>
+          <p class="text-slate-300 mb-6">Dr. Esther Njeri, LifeLine Kenya NGO:</p>
+          <p class="italic text-slate-300 mb-6">"Africa's healthcare crisis cannot be solved by any single sector. Fintech + medtech + donor ecosystems like Nuru are proving that collaboration scales impact exponentially."</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">"Scalability Through Data & Trust"</h3>
+          <p class="text-slate-300 mb-6">James Mwangi, Impact Africa Ventures:</p>
+          <p class="italic text-slate-300 mb-6">"The future belongs to platforms that combine real-time data, secure transactions, and human-centered design. Nuru is setting the benchmark for East African health financing."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE OUTLOOK -->
+  <section class="py-20 bg-slate-950">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-4xl font-black text-center mb-16 text-amber-400 fade-in">
+        The Future of Healthcare Financing in Africa
+      </h2>
+      
+      <div class="grid md:grid-cols-2 gap-10">
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">AI-Powered Risk Modeling</h3>
+          <p class="text-slate-300 mb-6">By 2030, predictive models will forecast treatment funding needs 60–90 days ahead with 92% accuracy — reducing defaults and expanding access.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">Blockchain-Secured Transactions</h3>
+          <p class="text-slate-300 mb-6">Immutable donor-to-patient flows eliminate fraud and build trust — already piloted in Nuru's 2026 donor matching engine.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">Automated Insurance Claims</h3>
+          <p class="text-slate-300 mb-6">Smart contracts reduce claim processing from 90 days to <48 hours — increasing hospital cash flow by 35%.</p>
+        </div>
+        
+        <div class="glass p-10 rounded-3xl fade-in">
+          <h3 class="text-3xl font-bold mb-6">Predictive Funding Models</h3>
+          <p class="text-slate-300 mb-6">Machine learning will anticipate funding gaps at population level, enabling proactive donor campaigns and government policy alignment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + NEWSLETTER -->
+  <section class="py-20 bg-gradient-to-br from-amber-600 via-amber-700 to-yellow-700 text-slate-950">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl md:text-5xl font-black mb-8">Shape the Future with Us</h2>
+      <p class="text-xl md:text-2xl mb-12">
+        Subscribe to receive exclusive insights, reports, and trend updates.
+      </p>
+
+      <div class="max-w-lg mx-auto glass p-10 rounded-3xl">
+        <form class="space-y-5">
+          <input type="email" placeholder="your@email.com" class="w-full bg-slate-800 border border-amber-400/40 rounded-xl px-6 py-4 focus:outline-none focus:border-amber-400">
+          <button type="submit" class="w-full py-5 bg-white font-bold text-lg rounded-xl hover:bg-gray-100 transition">
+            Subscribe to Insights
+          </button>
+          <p class="text-sm text-slate-400">
+            Monthly digest • No spam • Unsubscribe anytime
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 py-12 border-t border-amber-400/20">
+    <div class="max-w-7xl mx-auto px-6 text-center text-slate-400">
+      <a href="index.html" class="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 mb-6">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+      </a>
+      <p class="mt-4">© 2026 Nuru MedFinTech • Nairobi, Kenya • Powering East Africa's Connected Care Economy</p>
+    </div>
+  </footer>
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 py-20 border-t border-amber-400/20">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-slate-400">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <svg width="40" height="48" viewBox="0 0 52 62" fill="none" class="drop-shadow-[0_0_8px_#fbbf24]">
+            <rect x="24" y="4" width="4" height="54" rx="2" fill="#d97706"/>
+            <path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#fbbf24" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="26" cy="12" r="4" fill="#b45309"/>
+            <circle cx="30" cy="48" r="4" fill="#b45309"/>
+          </svg>
+          <span class="text-2xl font-black text-amber-400">NURU</span>
+        </div>
+        <p>Illuminating connected care across East Africa.</p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          <li><a href="about.html" class="hover:text-amber-300">About Us</a></li>
+          <li><a href="solutions.html" class="hover:text-amber-300">Solutions</a></li>
+          <li><a href="patients.html" class="hover:text-amber-300">For Patients</a></li>
+          <li><a href="providers.html" class="hover:text-amber-300">For Providers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Resources</h3>
+        <ul class="space-y-2">
+          <li><a href="resources.html" class="hover:text-amber-300">Guides & Tools</a></li>
+          <li><a href="insights.html" class="hover:text-amber-300">Insights</a></li>
+          <li><a href="security.html" class="hover:text-amber-300">Security</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-bold text-amber-400 mb-4">Connect</h3>
+        <div class="flex justify-center gap-6 text-2xl mb-6">
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-amber-300"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="text-sm mb-4">Subscribe for updates & insights</p>
+        <form class="flex flex-col gap-3">
+          <input type="email" placeholder="your@email.com" class="bg-slate-800 border border-amber-400/30 rounded-xl px-4 py-3 focus:outline-none focus:border-amber-400">
+          <button type="submit" class="py-3 bg-amber-500 text-slate-950 font-bold rounded-xl hover:bg-amber-400 transition">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+    <p class="text-center text-slate-500 mt-12 text-sm">© 2026 Nuru MedFinTech. All rights reserved. Nairobi, Kenya.</p>
+  </footer>
+
+
+  <script>
+    // Fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuBtn.innerHTML = mobileMenu.classList.contains('hidden') 
+        ? '<i class="fa-solid fa-bars"></i>' 
+        : '<i class="fa-solid fa-xmark"></i>';
+    });
+  </script>
+</body>
+</html>

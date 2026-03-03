@@ -35,7 +35,6 @@ Built with empathy, security, and transparency at its core.
   - Fraud detection & transaction monitoring
   - Instant donor matching & micro-financing options
 
-## 🚀 Live Demo / Pages
 
 - **Home** → [index.html](index.html)
 - **About Us** → [about.html](about.html)

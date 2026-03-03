@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuru Med Tech</title>
+  <p><b>ILLUMINATING HEALTHCARE</b></p>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+    
+    body { font-family: 'Inter', sans-serif; }
+
+    /* Animated gradient backgrounds */
+    .hero-bg { background: linear-gradient(135deg, #07078b 0%, #0a32a0 50%, #0a32a0 100%); background-size: 300% 300%; animation: gradientShift 25s ease infinite; }
+    .mission-bg { background: linear-gradient(135deg, #07078b 0%, #0a32a0 100%); }
+    .services-bg { background: linear-gradient(135deg, #07078b 0%, #0a32a0 100%); }
+    .testimonials-bg { background: linear-gradient(135deg, #07078b 0%, #0a32a0 100%); }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Neon → Gold Glow Nav */
+    .nav-glow {
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .nav-glow:hover {
+      color: #FBBF24 !important;
+      transform: translateY(-2px) scale(1.05);
+    }
+    .nav-glow:hover::after {
+      content: '';
+      position: absolute;
+      inset: -6px -12px;
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 9999px;
+      box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.6),
+                  0 0 24px 6px rgba(59, 130, 246, 0.3);
+      opacity: 1;
+    }
+    .nav-glow.active,
+    .nav-glow:active {
+      color: #FBBF24 !important;
+      text-shadow: 0 0 12px rgba(251, 191, 36, 0.9);
+    }
+    .nav-glow.active::after,
+    .nav-glow:active::after {
+      content: '';
+      position: absolute;
+      inset: -6px -12px;
+      border: 1.5px solid #FBBF24;
+      border-radius: 9999px;
+      box-shadow: 0 0 16px 4px rgba(251, 191, 36, 0.8),
+                  0 0 32px 12px rgba(251, 191, 36, 0.4);
+      opacity: 1;
+    }
+
+    /* Fade-in from left */
+    .fade-in-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .fade-in-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Glassmorphism dividers */
+    .glass-divider {
+      background: rgba(59, 32, 214, 0.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(251,191,36,0.15);
+    }
+
+    /* Floating ecosystem card */
+    .floating-card {
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Carousel */
+    .carousel-container { overflow: hidden; }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.32, 0.72, 0, 1);
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-white">
+
+  <!-- HERO -->
+  <section class="hero-bg overflow-hidden min-h-screen relative">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <!-- Bronze Serpent Logo -->
+        <div class="flex items-center gap-3">
+          <svg width="52" height="62" viewBox="0 0 52 62" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-glow">
+            <!-- Pole -->
+            <rect x="24" y="4" width="4" height="54" rx="2" fill="#D97706"/>
+            <!-- Bronze Serpent (coiled) -->
+            <path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#FBBF24" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="26" cy="12" r="4" fill="#B45309"/>
+            <circle cx="30" cy="48" r="4" fill="#B45309"/>
+          </svg>
+          <span class="text-4xl font-black tracking-tighter text-amber-300">NURU</span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="home.html" class="nav-glow active">Home</a>
+          <a href="about.html" class="nav-glow">About Us</a>
+          <a href="patients.html" class="nav-glow">For Patients</a>
+          <a href="providers.html"class="nav-glow">For Providers</a>
+          <a href="resources.html" class="nav-glow">Resources</a>
+          <a href="insigths.html" class="nav-glow">Insights</a>
+          <a href="security.html" class="nav-glow">Security</a>
+          <a href="contact.htmlt" class="nav-glow">Contact</a>
+        </nav>
+
+        <div class="hidden md:flex items-center gap-4">
+          <button onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})" 
+                  class="px-6 py-3 text-sm font-semibold border border-amber-400 rounded-3xl hover:bg-amber-400 hover:text-slate-950 transition">Request Demo</button>
+          <button class="px-6 py-3 text-sm font-semibold bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 rounded-3xl font-bold">Login Portal</button>
+        </div>
+
+        <button id="hamburger" class="md:hidden text-3xl"><i class="fa-solid fa-bars"></i></button>
+      </div>
+<!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-white/10 py-6">
+        <div class="flex flex-col gap-4 text-center text-lg font-medium px-6">
+          <a href="home.html" class="nav-glow py-3">Home</a>
+          <a href="about.html" class="nav-glow py-3">About Us</a>
+          <a href="patients.html" class="nav-glow py-3">For Patients</a>
+          <a href="providers.html" class="nav-glow py-3">For Providers</a>
+          <a href="resources,html" class="nav-glow py-3">Resources</a>
+          <a href="insights.html" class="nav-glow py-3">Insights</a>
+          <a href="security.html" class="nav-glow py-3">Security</a>
+          <a href="contact.html" class="nav-glow py-3">Contact</a>
+      <div class="pt-6 border-t border-white/10 flex flex-col gap-4 px-6">
+            <button class="py-4 border border-amber-400 rounded-3xl hover:bg-amber-400 hover:text-slate-950 transition">Request Demo</button>
+            <button class="py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold rounded-3xl">Login Portal</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO CONTENT -->
+    <div class="max-w-7xl mx-auto px-6 pt-24 pb-20 grid md:grid-cols-12 gap-12 items-center relative">
+      <div class="md:col-span-7 z-10">
+        <h1 class="text-6xl md:text-7xl font-black leading-none tracking-tighter">
+          <span class="text-amber-400">Nuru<br>Illuminating<br></span><span class="text-amber-400">Health Care</span>
+        </h1>
+        <p class="mt-8 text-3xl font-bold text-white">Access to healthcare financing should never delay life-saving care.</p>
+        
+        <div class="mt-12 flex flex-wrap gap-5">
+          <a href="#patients" class="px-10 py-4 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 font-bold text-xl rounded-3xl hover:scale-105 transition">Join as Patient</a>
+          <a href="#providers" class="px-10 py-4 border-2 border-amber-400 text-xl font-semibold rounded-3xl hover:bg-amber-400 hover:text-slate-950 transition">For Hospitals</a>
+        </div>
+      </div>
+
+      <!-- RIGHT-SIDE FLOATING ECOSYSTEM CARD -->
+      <div class="md:col-span-5 relative">
+        <div class="floating-card glass-divider p-6 rounded-3xl border border-amber-400/30 backdrop-blur-xl shadow-2xl">
+          <img src="nuruhonepic.jpg" alt="Nuru Connected Ecosystem" class="rounded-2xl">
+          <div class="absolute top-8 right-8 bg-slate-900/80 backdrop-blur-md px-5 py-2 rounded-2xl text-sm font-medium flex items-center gap-2">
+            <span class="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></span> Live Network
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="max-w-7xl mx-auto px-6 pb-12">
+      <div class="glass-divider rounded-3xl py-8 px-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div><div class="text-5xl font-bold text-amber-400">98.7%</div><div class="text-slate-400">Verification Success</div></div>
+        <div><div class="text-5xl font-bold text-amber-400">47</div><div class="text-slate-400">Hospitals Live</div></div>
+        <div><div class="text-5xl font-bold text-amber-400">3,892</div><div class="text-slate-400">Donors Matched</div></div>
+        <div><div class="text-5xl font-bold text-amber-400">KSh 1.2B</div><div class="text-slate-400">Funds Secured</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT NURU (with bold tagline) -->
+  <section id="about" class="mission-bg py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="fade-in-left">
+          <h2 class="text-5xl font-bold mb-6">Don't just watch the future of healthcare.<br><span class="text-amber-400">Build it with us.</span></h2>
+          <p class="text-xl text-slate-300">Partner • Invest • Turn to Nuru</p>
+          <p class="mt-8 text-lg leading-relaxed">We are a Kenyan-born MedFinTech platform uniting hospitals, patients, donor networks, insurers and financial institutions into one secure digital ecosystem — powered by real-time verification, transparent transplant finance, and life-saving education.</p>
+        </div>
+        <div class="fade-in-left">
+          <img src="blackpatient.jpg" alt="Doctors, patients and donors coming together" class="rounded-3xl shadow-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PURPOSE -->
+  <section class="services-bg py-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">Access to healthcare financing should never delay life-saving care</h2>
+      <p class="max-w-2xl mx-auto text-lg text-slate-300">Nuru removes the financial barriers that stand between patients and the care they deserve.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="py-16 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="glass-divider p-8 rounded-3xl text-center fade-in-left">
+          <i class="fa-solid fa-shield-halved text-5xl text-emerald-400 mb-6"></i>
+          <h3 class="font-bold text-xl mb-3">Insurance Verification</h3>
+          <p class="text-slate-400">Real-time NHIF &amp; private insurer checks in &lt;3 seconds</p>
+        </div>
+        <div class="glass-divider p-8 rounded-3xl text-center fade-in-left">
+          <i class="fa-solid fa-hand-holding-dollar text-5xl text-amber-400 mb-6"></i>
+          <h3 class="font-bold text-xl mb-3">Transplant Finance</h3>
+          <p class="text-slate-400">Secure dashboards, donor-matched funding, M-Pesa payouts</p>
+        </div>
+        <div class="glass-divider p-8 rounded-3xl text-center fade-in-left">
+          <i class="fa-solid fa-book-medical text-5xl text-sky-400 mb-6"></i>
+          <h3 class="font-bold text-xl mb-3">Patient Education</h3>
+          <p class="text-slate-400">Free modules on transplants, oncology, fertility &amp; more</p>
+        </div>
+        <div class="glass-divider p-8 rounded-3xl text-center fade-in-left">
+          <i class="fa-solid fa-chart-line text-5xl text-violet-400 mb-6"></i>
+          <h3 class="font-bold text-xl mb-3">Financial Literacy Tools</h3>
+          <p class="text-slate-400">Cost calculators, repayment plans, donor fundraising kit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPORTED PROCEDURES -->
+  <section class="py-16 bg-slate-900">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-semibold mb-10">Supported Life-Saving Procedures</h3>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-5xl">
+        <div class="text-center"><span>🫘</span><p class="text-sm mt-3">Kidney Transplant</p></div>
+        <div class="text-center"><span>🫀</span><p class="text-sm mt-3">Heart Transplant</p></div>
+        <div class="text-center"><span>🎗️</span><p class="text-sm mt-3">Oncology</p></div>
+        <div class="text-center"><span>🤰</span><p class="text-sm mt-3">High-Risk Birth</p></div>
+        <div class="text-center"><span>👁️</span><p class="text-sm mt-3">LASIK &amp; Cataract</p></div>
+        <div class="text-center"><span>🦻</span><p class="text-sm mt-3">Audiology</p></div>
+        <div class="text-center"><span>🌱</span><p class="text-sm mt-3">Fertility Treatments</p></div>
+        <div class="text-center"><span>🦷</span><p class="text-sm mt-3">Keratoplasty</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS (reduced spacing) -->
+  <section class="py-16 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">How Nuru Works</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center fade-in-left"><div class="w-16 h-16 mx-auto bg-blue-500/10 rounded-2xl flex items-center justify-center text-4xl mb-6">1️⃣</div><h3 class="font-semibold">Register &amp; Verify</h3></div>
+        <div class="text-center fade-in-left"><div class="w-16 h-16 mx-auto bg-emerald-500/10 rounded-2xl flex items-center justify-center text-4xl mb-6">2️⃣</div><h3 class="font-semibold">Match &amp; Fund</h3></div>
+        <div class="text-center fade-in-left"><div class="w-16 h-16 mx-auto bg-amber-500/10 rounded-2xl flex items-center justify-center text-4xl mb-6">3️⃣</div><h3 class="font-semibold">Learn &amp; Track</h3></div>
+        <div class="text-center fade-in-left"><div class="w-16 h-16 mx-auto bg-violet-500/10 rounded-2xl flex items-center justify-center text-4xl mb-6">4️⃣</div><h3 class="font-semibold">Receive Care</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS CAROUSEL -->
+  <section class="testimonials-bg py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12">Stories That Inspire</h2>
+      <div id="carousel" class="carousel-container max-w-4xl mx-auto">
+        <div id="track" class="carousel-track flex">
+          <!-- Slide 1 Patient -->
+          <div class="min-w-full px-4">
+            <div class="glass-divider p-10 rounded-3xl text-center">
+              <p class="text-xl italic">"Nuru verified my insurance in 40 minutes and matched me with a donor within a week. I got my kidney transplant funded. I am alive today because of Nuru."</p>
+              <p class="mt-8 font-semibold">— Aisha M., Kidney Recipient, Nairobi</p>
+            </div>
+          </div>
+          <!-- Slide 2 Hospital -->
+          <div class="min-w-full px-4">
+            <div class="glass-divider p-10 rounded-3xl text-center">
+              <p class="text-xl italic">"The dashboard cut our claims processing time by 85%. Funds arrive the same day via fast pacing money transfer methods. Game changer for transplant programs."</p>
+              <p class="mt-8 font-semibold">— Dr. James O., Kenyatta National Hospital</p>
+            </div>
+          </div>
+          <!-- Add 3 more slides similarly for Doctor, Donor, Financer -->
+        </div>
+      </div>
+      <div class="flex justify-center gap-4 mt-8">
+        <button onclick="prevSlide()" class="w-12 h-12 rounded-full border border-amber-400 flex items-center justify-center hover:bg-amber-400/10"><i class="fa-solid fa-chevron-left"></i></button>
+        <button onclick="nextSlide()" class="w-12 h-12 rounded-full border border-amber-400 flex items-center justify-center hover:bg-amber-400/10"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+        <!-- repeat for 3 more -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="py-24 bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 text-slate-950">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-5xl font-black">Don't just watch the future of healthcare.<br>Build it with us.</h2>
+      <p class="mt-6 text-2xl">Partner • Invest • Turn to Nuru</p>
+      <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
+        <button class="px-12 py-6 text-2xl font-bold bg-white rounded-3xl hover:scale-105 transition">Become a Partner</button>
+        <button class="px-12 py-6 text-2xl font-bold border-4 border-white rounded-3xl hover:bg-white hover:text-slate-950 transition">Invest in Nuru</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-20">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <div class="flex items-center gap-3 mb-6">
+          <!-- Bronze Serpent Logo again -->
+          <svg width="42" height="52" viewBox="0 0 52 62" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="24" y="4" width="4" height="54" rx="2" fill="#D97706"/><path d="M28 12 Q38 18 26 28 Q14 38 30 48 Q42 55 26 58" stroke="#FBBF24" stroke-width="6" stroke-linecap="round" fill="none"/><circle cx="26" cy="12" r="4" fill="#B45309"/><circle cx="30" cy="48" r="4" fill="#B45309"/></svg>
+          <span class="text-3xl font-black">NURU</span>
+        </div>
+        <p class="text-slate-400">Lighting the path to accessible, secure, connected healthcare across Africa and beyond.</p>
+      </div>
+
+      <!-- Quick Nav -->
+      <div class="md:col-span-2">
+        <h4 class="font-semibold mb-6">Quick Links</h4>
+        <ul class="space-y-3 text-slate-400">
+          <li><a href="about.html"class="hover:text-amber-400">About</a></li>
+          <li><a href="resources.html"class="hover:text-amber-400">Resources</a></li>
+          <li><a href="patients.html" class="hover:text-amber-400">For Patients</a></li>
+          <li><a href="providers.html" class="hover:text-amber-400">For Providers</a></li>
+          <li><a href="ïnsights.html" class="hover:text-amber-400">Insights</a></li>
+          <li><a href="security.html" class="hover:text-amber-400">Security</a></li>
+          <li><a href="contact.html"class="hover:text-amber-400">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Glass -->
+      <div class="md:col-span-3">
+        <h4 class="font-semibold mb-6">Stay in the Light</h4>
+        <div class="glass-divider p-6 rounded-3xl">
+          <input type="email" placeholder="your@email.com" class="w-full bg-transparent border-b border-white/30 py-3 focus:outline-none text-sm">
+          <button class="mt-6 w-full py-4 bg-amber-400 text-slate-950 font-bold rounded-2xl">Subscribe</button>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="md:col-span-3 text-right">
+        <h4 class="font-semibold mb-6">Follow the Light</h4>
+        <div class="flex justify-end gap-6 text-3xl">
+          <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" class="hover:text-amber-400"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center text-xs text-slate-500 mt-20 border-t border-white/10 pt-8">© 2026 Nuru Med Tech • Nairobi, Kenya • All rights reserved</div>
+  </footer>
+
+  <!-- CIRCULAR ECOSYSTEM DIAGRAM BELOW FOOTER -->
+  <div class="bg-slate-950 py-12 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <img src="ecosystemhealth.jpg" alt="Nuru Circular Ecosystem – Hospital → Patient → Insurer (Nuru) → Donor" class="mx-auto rounded-3xl shadow-2xl">
+      <p class="text-xs text-slate-400 mt-4">Hospital → Patient → Nuru → Insurer → Donor Network</p>
+    </div>
+  </div>
+
+  <script>
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      hamburger.innerHTML = mobileMenu.classList.contains('hidden') ? '<i class="fa-solid fa-bars"></i>' : '<i class="fa-solid fa-xmark"></i>';
+    });
+
+    // Fade-in observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-in-left').forEach(el => observer.observe(el));
+
+    // Simple Carousel (add more slides as needed)
+    let currentSlide = 0;
+    const track = document.getElementById('track');
+    function nextSlide() { currentSlide = (currentSlide + 1) % 2; track.style.transform = `translateX(-${currentSlide * 100}%)`; }
+    function prevSlide() { currentSlide = (currentSlide - 1 + 2) % 2; track.style.transform = `translateX(-${currentSlide * 100}%)`; }
+    // Add more slides in HTML if you want 5
+  </script>
+</body>
+</html>

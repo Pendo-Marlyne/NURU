@@ -36,9 +36,8 @@ Built with empathy, security, and transparency at its core.
   - Instant donor matching & micro-financing options
 
 
-- **Home** → [index.html](index.html)
+- **Home** → [home.html](home.html)
 - **About Us** → [about.html](about.html)
-- **Solutions** → [solutions.html](solutions.html)
 - **For Patients** → [patients.html](patients.html)
 - **For Providers** → [providers.html](providers.html)
 - **Resources & Learning Hub** → [resources.html](resources.html)
